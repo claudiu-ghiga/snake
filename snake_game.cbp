@@ -37,6 +37,29 @@
 			<Add option="-lmingw32 -lSDL2main -lSDL2" />
 			<Add directory="D:/mingw-lib/i686-w64-mingw32/lib" />
 		</Linker>
+		<Unit filename="Apple.cpp" />
+		<Unit filename="Apple.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Powerup.cpp" />
+		<Unit filename="Powerup.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Snake.cpp" />
+		<Unit filename="Snake.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SnakeAI.cpp" />
+		<Unit filename="SnakeAI.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="SnakeSegment.cpp" />
+		<Unit filename="SnakeSegment.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="constants.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

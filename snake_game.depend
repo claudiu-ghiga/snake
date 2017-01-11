@@ -1,8 +1,12 @@
 # depslib dependency file v1.0
-1483720079 source:d:\snake_game\main.cpp
+1484166735 source:d:\snake_game\main.cpp
 	<iostream>
 	<deque>
 	<SDL.h>
+	"Apple.h"
+	"SnakeSegment.h"
+	"Snake.h"
+	"constants.h"
 
 1476932294 d:\mingw-lib\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -322,4 +326,51 @@
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
+
+1483913207 d:\snake_game\apple.h
+	<SDL.h>
+
+1483888571 d:\snake_game\snakesegment.h
+
+1483888159 source:d:\snake_game\apple.cpp
+	<cstdlib>
+	"constants.h"
+	"Apple.h"
+
+1484134078 d:\snake_game\constants.h
+
+1483888318 source:d:\snake_game\snakesegment.cpp
+	"SnakeSegment.h"
+
+1484166614 d:\snake_game\snake.h
+	<deque>
+	<SDL.h>
+	"SnakeSegment.h"
+	"Apple.h"
+	"Powerup.h"
+	"constants.h"
+
+1484166471 source:d:\snake_game\snake.cpp
+	"constants.h"
+	"Snake.h"
+	<iostream>
+
+1484134174 d:\snake_game\snakeai.h
+	<deque>
+	<SDL.h>
+	"SnakeSegment.h"
+	"Apple.h"
+	"Snake.h"
+
+1484134196 source:d:\snake_game\snakeai.cpp
+	"constants.h"
+	"SnakeAI.h"
+
+1484136771 d:\snake_game\powerup.h
+	<SDL.h>
+
+1484166599 source:d:\snake_game\powerup.cpp
+	"Powerup.h"
+	"constants.h"
+	<cstdlib>
 
