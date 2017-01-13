@@ -58,7 +58,6 @@ void Snake::Update(Apple *apple, Powerup *powerup, bool gameMap[CELL_HEIGHT][CEL
     if(Snake::CheckAppleCollision(apple)){
         apple->Respawn(gameMap);
         score += 100;
-        std::cout<<score<<std::endl;
     }
     else{
         if(direction != GO_NONE && (segments.size() > 1))
@@ -242,7 +241,6 @@ void Snake::UsePowerup(Powerup *powerup)
     if(powerupType == BONUS){
         scoreModified = true;
         score += 300;
-        std::cout<<score<<std::endl;
     }
 }
 

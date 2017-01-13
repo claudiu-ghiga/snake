@@ -32,10 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 			<Add directory="D:/mingw-lib/i686-w64-mingw32/include/SDL2" />
+			<Add directory="D:/mingw-lib/SDL_ttf/i686-w64-mingw32/include/SDL2" />
 		</Compiler>
 		<Linker>
-			<Add option="-lmingw32 -lSDL2main -lSDL2" />
+			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf" />
 			<Add directory="D:/mingw-lib/i686-w64-mingw32/lib" />
+			<Add directory="D:/mingw-lib/SDL_ttf/i686-w64-mingw32/lib" />
 		</Linker>
 		<Unit filename="Apple.cpp" />
 		<Unit filename="Apple.h" />

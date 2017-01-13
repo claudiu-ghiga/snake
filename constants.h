@@ -8,6 +8,7 @@ const int CELL_WIDTH = SCREEN_WIDTH / CELL_SIZE;
 const int CELL_HEIGHT = SCREEN_HEIGHT / CELL_SIZE;
 const int FRAMES_PER_SECOND = 30;
 const int SPEED_MULTIPLIER = 3;
+const int SCORES_SHOWN = 10;
 
 enum Directions{
     GO_NONE,

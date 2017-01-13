@@ -2,11 +2,13 @@
 #include "SnakeAI.h"
 #include <iostream>
 
-SnakeAI::SnakeAI(unsigned long headColor, unsigned long segmentColor)
+SnakeAI::SnakeAI(unsigned long headColor, unsigned long segmentColor, int userInput)
 {
     this->headColor = headColor;
     this->segmentColor = segmentColor;
-    SnakeAI::Restart();
+    dead = false;
+    if(userInput == 2)
+        SnakeAI::Restart();
 }
 
 SnakeAI::~SnakeAI()
@@ -22,19 +24,21 @@ void SnakeAI::Restart()
     segmentsToAdd = START_LENGTH;
     time = 0;
     timeout = 30;
-    dead = false;
     score = 0;
 }
 
 void SnakeAI::Update(Snake *playerSnake, Apple *apple, bool gameMap[CELL_HEIGHT][CELL_WIDTH])
 {
-    if(!(playerSnake->IsActive()) || playerSnake->IsDead())
+    if(!(playerSnake->IsActive()) || playerSnake->IsDead() || dead)
         return;
 
     if(timer.GetTicks() < (SPEED_MULTIPLIER * 1000)/FRAMES_PER_SECOND)
         return;
 
     timer.Start();
+
+    if(SnakeAI::CheckSelfCollision())
+        dead = true;
 
     if(SnakeAI::CheckAppleCollision(apple)){
         apple->Respawn(gameMap);
@@ -227,4 +231,16 @@ void SnakeAI::MoveSnake()
 bool SnakeAI::CheckAppleCollision(Apple *apple)
 {
     return (segments[0].x == apple->x && segments[0].y == apple->y);
+}
+
+bool SnakeAI::CheckSelfCollision()
+{
+    unsigned int headX = segments[0].x;
+    unsigned int headY = segments[0].y;
+
+    if(segments.size() > 1)
+        for(unsigned int i = 1; i < segments.size(); i++)
+            if(segments[i].x == headX && segments[i].y == headY)
+                return true;
+    return false;
 }

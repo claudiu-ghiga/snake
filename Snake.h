@@ -12,6 +12,7 @@ class Snake
 {
     public:
     std::deque<SnakeSegment> segments;
+    int score;
 
     private:
     bool dead;
@@ -26,7 +27,6 @@ class Snake
     bool sizeModified;
     unsigned long sizeRenderStartTime;
     bool scoreModified;
-    int score;
 
     const int MOD_SPEED = 2;
     const int NORMAL_SPEED = 1;

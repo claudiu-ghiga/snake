@@ -11,6 +11,7 @@ class SnakeAI
 {
     public:
     std::deque<SnakeSegment> segments;
+    int score;
 
     private:
     struct Cell{
@@ -27,7 +28,6 @@ class SnakeAI
     unsigned long headColor, segmentColor;
     SDL_Rect renderRect;
     unsigned int segmentsToAdd;
-    int score;
 
     const int AI_START_X = CELL_WIDTH / 4;
     const int AI_START_Y = CELL_HEIGHT / 2;
@@ -54,7 +54,7 @@ class SnakeAI
     } timer;
 
     public:
-    SnakeAI(unsigned long headColor, unsigned long segmentColor);
+    SnakeAI(unsigned long headColor, unsigned long segmentColor, int userInput);
 
     ~SnakeAI();
 
@@ -78,6 +78,8 @@ class SnakeAI
     void MoveSnake();
 
     bool CheckAppleCollision(Apple *apple);
+
+    bool CheckSelfCollision();
 };
 
 #endif // SNAKEAI_H_INCLUDED
